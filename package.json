@@ -1,0 +1,36 @@
+{
+  "name": "productlytics",
+  "version": "1.0.0",
+  "description": "ProductLytics web app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michalchmura/ProductLytics.git"
+  },
+  "author": "@michalchmura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michalchmura/ProductLytics/issues"
+  },
+  "homepage": "https://github.com/michalchmura/ProductLytics#readme",
+  "dependencies": {
+    "next": "^8.0.0-canary.2",
+    "nprogress": "^0.2.0",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "styled-components": "^4.1.3"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.0",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.3"
+  }
+}

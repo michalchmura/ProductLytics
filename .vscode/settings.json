@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "prettier.trailingComma": "es5",
+  "prettier.eslintIntegration": true,
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#6A3FAF",
+    "titleBar.inactiveBackground": "#6A3FAF"
+  }
+}
