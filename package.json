@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/michalchmura/ProductLytics#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "next": "^8.0.0-canary.2",
     "nprogress": "^0.2.0",
     "react": "^16.7.0-alpha.2",

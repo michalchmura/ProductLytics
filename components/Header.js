@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import NProgress from 'nprogress';
 import Router from 'next/router';
+import { Fragment } from 'react';
 // import Nav from './Nav';
 
 Router.onRouteChangeStart = () => {
@@ -54,18 +55,19 @@ const StyledHeader = styled.header`
 `;
 
 const Header = () => (
-  <StyledHeader>
-    <div className="bar">
-      <Logo>
-        <Link href="/">
-          <a>ProductLytics</a>
-        </Link>
-      </Logo>
-      {/* <Nav /> */}
-    </div>
-    <div className="sub-bar">{/* <Search /> */}</div>
-    {/* <Cart /> */}
-  </StyledHeader>
+  <Fragment />
+  // <StyledHeader>
+  //   <div className="bar">
+  //     <Logo>
+  //       <Link href="/">
+  //         <a>ProductLytics</a>
+  //       </Link>
+  //     </Logo>
+  //     {/* <Nav /> */}
+  //   </div>
+  //   <div className="sub-bar">{/* <Search /> */}</div>
+  //   {/* <Cart /> */}
+  // </StyledHeader>
 );
 
 export default Header;
