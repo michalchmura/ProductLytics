@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Fragment } from 'react';
 import {
-  LineChart, Line, Tooltip, XAxis, CartesianGrid,
+  LineChart, Line, Tooltip, YAxis, XAxis, CartesianGrid,
 } from 'recharts';
 import LoadingComponent from './LoadingComponent';
 
@@ -17,12 +17,16 @@ const Comments = styled.span`
 const Title = styled.p`
   color: red;
 `;
-
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 const formatProductVotes = (productsData) => {
   const data = {};
+
   productsData.forEach((p, i) => {
-    data[i] = p.votes;
+    data[i] = parseInt(p.votes);
   });
+
   return [data];
 };
 
@@ -78,6 +82,7 @@ const Products = (props) => {
         {Object.keys(formatProductVotes(context.productsData)[0]).map(k => (
           <Line type="monotone" dataKey={k} stroke="#8884d8" strokeWidth={2} />
         ))}
+        <YAxis />
 
         {/* <Line type="monotone" dataKey="uv" stroke="#732f" strokeWidth={2} />
       <Line type="monotone" dataKey="amt" stroke="#123f" strokeWidth={2} /> */}
