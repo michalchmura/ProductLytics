@@ -87,28 +87,25 @@ const Products = (props) => {
         {/* <Line type="monotone" dataKey="uv" stroke="#732f" strokeWidth={2} />
       <Line type="monotone" dataKey="amt" stroke="#123f" strokeWidth={2} /> */}
       </LineChart>
-      {context.productsData.map(product => (
-        <Fragment>
-          <p>
-            <Votes>{product.votes}</Votes>
-            {' '}
+      {context.productsData.map((product, index) => (
+        <p key={index}>
+          <Votes>{product.votes}</Votes>
+          {' '}
 |
-            <Comments>
-              {' '}
-              {product.comments}
-            </Comments>
+          <Comments>
             {' '}
+            {product.comments}
+          </Comments>
+          {' '}
 ::
-            <strong>
-              {' '}
-              {product.name}
-            </strong>
+          <strong>
             {' '}
+            {product.name}
+          </strong>
+          {' '}
 -
-            {product.description}
-          </p>
-          {/* <Title>{product.name}</Title> */}
-        </Fragment>
+          {product.description}
+        </p>
       ))}
     </LoadingComponent>
   );

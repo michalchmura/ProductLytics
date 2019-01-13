@@ -11,9 +11,10 @@ const useFetchAnalytics = (props) => {
     setApiError(null);
 
     try {
-      const { data } = await axios.get('http://localhost:5678/api/analytics/latest');
-      console.log(data);
-      setProductsData(data);
+      const {
+        data: { products },
+      } = await axios.get('http://localhost:5678/api/analytics/latest');
+      setProductsData(products);
     } catch (err) {
       setApiError(err);
     }
