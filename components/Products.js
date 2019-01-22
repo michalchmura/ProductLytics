@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import moment from 'moment';
 import { Fragment } from 'react';
 import {
   LineChart, Line, Tooltip, YAxis, XAxis, CartesianGrid,
@@ -17,35 +18,15 @@ const Comments = styled.span`
 const Title = styled.p`
   color: red;
 `;
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-const formatProductVotes = (productsData) => {
-  const data = {};
-  // console.log(productsData);
 
-  productsData.forEach((p) => {
-    data[p.id] = parseInt(p.votes, 10);
-  });
-  // productsData.forEach((p) => {
-  //   console.log(p);
-  //   p.forEach((_p, i) => {
-  //     data[i] = parseInt(_p.votes, 10);
-  //   });
-  // });
-  // productsData.forEach((p, i) => {
-  //   data[i] = parseInt(p.votes, 10);
-  // });
-
-  return [data];
-};
 const Chart = ({ analyticsData }) => {
-  console.log('analyticsData', analyticsData);
   if (analyticsData && analyticsData.length > 0) {
+    // Recharts won't redraw the chart unless new array gets passed as data props
+    const newArray = [].concat(analyticsData);
     return (
-      <LineChart width={900} height={500} data={analyticsData}>
-        {Object.keys(analyticsData[0]).map(k => (k !== 'date' ? (
-          <Line type="monotone" dot={false} dataKey={k} stroke="#8884d8" strokeWidth={2} />
+      <LineChart width={900} height={500} data={newArray}>
+        {Object.keys(newArray[0]).map(k => (k !== 'date' ? (
+          <Line id={k} type="monotone" dot={false} dataKey={k} stroke="#8884d8" strokeWidth={2} />
         ) : null))}
         <Tooltip />
         <YAxis />
