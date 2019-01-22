@@ -4,8 +4,9 @@ import useFetchAnalytics from '../hooks/FetchAnalytics';
 import useConnectSockets from '../hooks/ConnectSockets';
 
 const MyProvider = (props) => {
+  const [analyticsData, setAnalyticsData] = useState([]);
   const { isLoadingApi, apiError, productsData } = useFetchAnalytics();
-  const { socketConnection } = useConnectSockets();
+  const { socketConnection } = useConnectSockets({ analyticsData, setAnalyticsData });
 
   return (
     <MyContext.Provider
@@ -13,6 +14,8 @@ const MyProvider = (props) => {
         isLoadingApi,
         apiError,
         productsData,
+        socketConnection,
+        analyticsData,
       }}
     >
       {props.children}
