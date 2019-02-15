@@ -5,7 +5,7 @@ const parseAnalytics = (analytics) => {
   const data = { date: analytics.date };
 
   analytics.products.forEach((p) => {
-    data[p.id] = parseInt(p.votes, 10);
+    data[p.name] = parseInt(p.votes, 10);
   });
 
   return data;
